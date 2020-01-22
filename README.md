@@ -16,3 +16,8 @@ idea /  jdk1.8 /  spring Netflix cloud(2.0.6) /  mysql5.7
 | service-order  | 订单模块；   |
 | service-product  |   商品模块； |
 
+# 2.0 gateway实现动态配置网关
+官方教程讲的都是提前在配置文件中配置网关，而在实际工作中不可能随便重启网关服务，这时动态配置就急需要解决；
+动态网关配置：redis mysql  gateway2.0.1；
+具体代码在mall-gateway模块
+请参考博客地址;
