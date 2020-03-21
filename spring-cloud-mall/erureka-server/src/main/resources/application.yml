@@ -20,3 +20,5 @@ eureka:
 spring:
   application:
     name: erureka-server
+
+
