@@ -1,7 +1,7 @@
 # spring-cloud-mall
 基于spring-Netflix-cloud开的商城，总结一些典型的案例和开发中遇到的坑
 # 环境
-idea /  jdk1.8 /  spring Netflix cloud(2.0.6) /  mysql5.7
+idea /  jdk1.8 /  spring Netflix cloud(Finchley-2.0.6) /  mysql5.7 / 
 ### 1.1 简介
 | 项目名称 |项目简介  |
 |--|--|
