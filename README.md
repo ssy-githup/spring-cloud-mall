@@ -18,7 +18,8 @@ idea /  jdk1.8 /  spring Netflix cloud(Finchley-2.0.6) /  mysql5.7 /
 2. 使用ribbon对这次请求进行分发到 **MALL-CONSUMER**
 3. 其中的一个消费者开始处理这个请求
 4. 最后请求根据ribbon的处理到达生产者
-#3 ribbon  fegin  Hystrix  三者组合后调用时的超时时间设置
+# 3 ribbon  fegin  Hystrix  三者组合后调用时的超时时间设置
+``` java
 ##===================重试机制===============================
 
 
@@ -48,6 +49,7 @@ ribbon.MaxAutoRetriesNextServer=2
 ribbon.MaxAutoRetries=1
 
 ##==================重试机制===============================
+```
 # 3.0 gateway实现动态配置网关
 官方教程讲的都是提前在配置文件中配置网关，而在实际工作中不可能随便重启网关服务，这时动态配置就急需要解决；
 动态网关配置：redis mysql  gateway2.0.1；
