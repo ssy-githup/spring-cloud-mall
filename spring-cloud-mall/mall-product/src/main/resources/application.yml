@@ -1,6 +1,9 @@
 # tomcat
 server:
   port: 8801
+  servlet:
+    context-path:
+    max-http-header-size: 204800
 
 mybatis:
   mapper-locations: # 所有的mapper映射文件
@@ -11,10 +14,12 @@ mybatis:
 
 eureka:
   client:
-    register-with-eureka: false #表示是否将自己注册到Eureka Server
+    register-with-eureka: true #表示是否将自己注册到Eureka Server
     service-url:
       defaultZone: http://127.0.0.1:9090/eureka
     registry-fetch-interval-seconds: 180 #此参数会更新路由信息
+    instance:
+      instance-id: mall-product
 spring:
   profiles:
   datasource:
@@ -24,7 +29,7 @@ spring:
     username: root
     password: 123456
   application:
-    name: mall-consumer
+    name: mall-product
   rabbitmq:
     host: 101.200.225.183
     port: 5672
@@ -36,5 +41,7 @@ spring:
         acknowledge-mode:  manual
       simple:
         acknowledge-mode: manual
+  activemq:
+    broker-url:
 
 
