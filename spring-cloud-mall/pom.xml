@@ -18,12 +18,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>mall-common</module>
+        <module>fegin-api</module>
         <module>erureka-server</module>
         <module>mall-gateway</module>
         <module>mall-product</module>
         <module>mall-consumer</module>
-        <module>mall-common</module>
-        <module>fegin-api</module>
+
+
     </modules>
 
     <!--引入springcloud的版本-->

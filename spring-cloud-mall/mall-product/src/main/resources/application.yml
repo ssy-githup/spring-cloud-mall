@@ -1,9 +1,9 @@
 # tomcat
 server:
   port: 8801
-  servlet:
-    context-path:
-    max-http-header-size: 204800
+#  servlet:
+#    context-path:
+#    max-http-header-size: 204800
 
 mybatis:
   mapper-locations: # 所有的mapper映射文件

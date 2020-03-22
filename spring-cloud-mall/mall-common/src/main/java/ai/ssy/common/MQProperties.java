@@ -1,6 +1,4 @@
-package ai.ssy.util;
-
-
+package ai.ssy.common;
 
 /**
  * @Description: TODO
