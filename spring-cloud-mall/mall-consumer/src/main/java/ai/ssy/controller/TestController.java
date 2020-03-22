@@ -21,7 +21,7 @@ public class TestController {
     @RequestMapping("/test/hellow/{id}")
     @ResponseBody
     public String queryOrderInfoById(@PathVariable("id") Integer id) {
-System.out.println("11111111");
+        System.out.println("请求到达消费者");
         return "hello:"+id;
 
     }
