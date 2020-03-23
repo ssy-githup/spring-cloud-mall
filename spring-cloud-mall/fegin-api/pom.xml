@@ -27,7 +27,11 @@
         <dependency>
             <groupId>ai.ssy</groupId>
             <artifactId>mall-common</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
+
+
+    <build>
+        <finalName>fegin-api</finalName>
+    </build>
 </project>

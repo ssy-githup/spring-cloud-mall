@@ -24,4 +24,10 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
     </dependencies>
+
+
+
+    <build>
+        <finalName>mall-common</finalName>
+    </build>
 </project>
