@@ -1,4 +1,4 @@
-@[TOC]
+[toc]
 # spring-cloud-mall
 基于spring-Netflix-cloud开的商城，总结一些典型的案例和开发中遇到的坑
 # 环境
