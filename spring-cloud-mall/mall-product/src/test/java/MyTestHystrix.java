@@ -24,6 +24,7 @@ public class MyTestHystrix {
     private final int THREAD_NUM=20;
     CountDownLatch cdl = new CountDownLatch(THREAD_NUM);
 
+   // private static int i = 0;
     @Test
     public void testThread() throws Exception {
         for (int i = 0; i < THREAD_NUM; i++) {
@@ -32,6 +33,7 @@ public class MyTestHystrix {
                 public void run() {
                     String url = "http://127.0.0.1:8801/testThread";
                     String str = template.getForObject(url, String.class);
+
                     System.out.println(str);
                 }
             }).start();
