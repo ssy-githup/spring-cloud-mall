@@ -13,6 +13,7 @@ eureka:
   client:
     register-with-eureka: false #表示是否将自己注册到Eureka Server
     service-url:
+      #defaultZone: http://182.92.78.3:9090/eureka #正式
       defaultZone: http://127.0.0.1:9090/eureka
     registry-fetch-interval-seconds: 180 #此参数会更新路由信息
 spring:

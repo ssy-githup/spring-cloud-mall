@@ -1,0 +1,10 @@
+ai\ssy\controller\TestController.class
+ai\ssy\service\impl\MUserServiceImpl.class
+ai\ssy\util\MQConfig.class
+ai\ssy\controller\LoginController.class
+ai\ssy\mapper\MUserMapper.class
+ai\ssy\ProductApp.class
+ai\ssy\service\TestHystrixService.class
+ai\ssy\service\MUserService.class
+ai\ssy\controller\TestHystrix.class
+ai\ssy\service\impl\TestHystrixServiceImpl.class

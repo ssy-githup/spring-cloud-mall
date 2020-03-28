@@ -1,0 +1,13 @@
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\controller\RotusController.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\filter\AuthSignatureFilter.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\service\impl\GatewayDefineServiceImpl.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\filter\IgnoreGlobalFilterFactor.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\bean\InitBean.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\config\redis\serializer\FastJsonRedisSerializer.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\vo\GatewayDefine.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\repsitory\MyRouteDefinitionRepository.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\config\redis\RedisConfig.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\service\GatewayDefineService.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\GatewayApplication.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\config\redis\CacheHelper.java
+E:\demoShop\small-shop\spring-cloud-mall\mall-gateway\src\main\java\ai\ssy\mapper\GatewayDefineMapper.java

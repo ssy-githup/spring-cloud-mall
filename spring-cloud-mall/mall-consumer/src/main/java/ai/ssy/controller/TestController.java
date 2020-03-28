@@ -1,11 +1,14 @@
 package ai.ssy.controller;
 
+import ai.ssy.feginapi.LoginFeginApi;
 import ai.ssy.feginapi.TestFeginApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Map;
 
 /**
  * @ClassName TestController
@@ -18,6 +21,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 public class TestController {
 
+    @Autowired
+    private TestFeginApi testFeginApi;
+
+    @Autowired
+    private LoginFeginApi loginFeginApi;
+
+    @RequestMapping("/login")
+    @ResponseBody
+    public Map<String,Object> queryOrderInfoById(String userName,
+                                                 String passWord) {
+
+        return loginFeginApi.login(userName,passWord);
+
+    }
+
     @RequestMapping("/test/hellow/{id}")
     @ResponseBody
     public String queryOrderInfoById(@PathVariable("id") Integer id) {
@@ -26,8 +44,6 @@ public class TestController {
 
     }
 
-    @Autowired
-    private TestFeginApi testFeginApi;
 
     @RequestMapping("/test/hello/{id}")
     @ResponseBody

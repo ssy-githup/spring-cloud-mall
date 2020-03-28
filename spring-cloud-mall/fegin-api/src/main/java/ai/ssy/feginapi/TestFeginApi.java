@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Version V1.0
  **/
 //                   微服务的名称             统一的path(比如类上的那个)
-//@FeignClient(name = "mall-product",path = "/myfirst")
-@FeignClient(name = "mall-product",fallback = TestFeginApiFallBack.class,path = "/myfirst")
+@FeignClient(name = "mall-product",path = "/myfirst")
+//@FeignClient(name = "mall-product",fallback = TestFeginApiFallBack.class,path = "/myfirst")
 public interface TestFeginApi {
 
     @RequestMapping("/hellow/{id}")

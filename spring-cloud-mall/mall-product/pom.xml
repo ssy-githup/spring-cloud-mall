@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ai.ssy</groupId>
     <artifactId>mall-product</artifactId>
-
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -24,7 +24,22 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <!-- 去除内嵌tomcat -->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>spring-boot-starter-tomcat</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
         </dependency>
+        <!--添加servlet的依赖-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <version>3.1.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -72,6 +87,7 @@
     </dependencies>
 
 <build>
+    <finalName>mall-product</finalName>
     <plugins>
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -81,23 +97,7 @@
                 <encoding>UTF-8</encoding>
             </configuration>
         </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.0.0</version>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <archiveClasses>false</archiveClasses>
-                <packagingIncludes>
-                    WEB-INF/lib/mall-common-1.0.jar,
-                    WEB-INF/classes/**
-                </packagingIncludes>
-            </configuration>
-        </plugin>
+
         <!-- 禁止执行单元测试 -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>

@@ -88,82 +88,89 @@
 
   <build>
     <finalName>mall_gateway</finalName>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-      <plugins>
-
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>2.6</version>
-          <configuration>
-            <archive>
-              <!-- 添加index则不从mainfest中读取classpath，而是从Index.list中读取 -->
-              <!-- <index>true</index> -->
-              <manifest>
-                <mainClass>cn.rntd.GatewayApplication</mainClass>
-                <addClasspath>true</addClasspath>
-                <classpathPrefix>lib/</classpathPrefix>
-              </manifest>
-              <manifestEntries>
-                <Class-Path>./</Class-Path>
-              </manifestEntries>
-            </archive>
-          </configuration>
-        </plugin>
-        <plugin>
-          <artifactId>maven-resources-plugin</artifactId>
-          <version>2.6</version>
-          <executions>
-            <execution>
-              <id>copy-config</id>
-              <phase>process-sources</phase>
-              <goals>
-                <goal>copy-resources</goal>
-              </goals>
-              <configuration>
-                <outputDirectory>${basedir}/target/classes</outputDirectory>
-                <resources>
-                  <resource>
-                    <directory>${basedir}/src/main/resources</directory>
-                    <includes>
-                      <exclude>/**</exclude>
-                    </includes>
-                  </resource>
-                </resources>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-        <!--拷贝依赖到jar外面的lib目录 -->
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <executions>
-            <execution>
-              <id>copy-lib</id>
-              <phase>prepare-package</phase>
-              <goals>
-                <goal>copy-dependencies</goal>
-              </goals>
-              <configuration>
-                <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                <excludeTransitive>false</excludeTransitive>
-                <stripVersion>false</stripVersion>
-                <includeScope>runtime</includeScope>
-              </configuration>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.6</version>
         <configuration>
-          <source>8</source>
-          <target>8</target>
+          <archive>
+            <!-- 添加index则不从mainfest中读取classpath，而是从Index.list中读取 -->
+            <!-- <index>true</index> -->
+            <manifest>
+              <mainClass>ai.ssy.GatewayApplication</mainClass>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+            </manifest>
+            <manifestEntries>
+              <Class-Path>./</Class-Path>
+            </manifestEntries>
+          </archive>
         </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>copy-config</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/classes</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/src/main/resources</directory>
+                  <includes>
+                    <exclude>/**</exclude>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!--拷贝依赖到jar外面的lib目录 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-lib</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/lib</outputDirectory>
+              <excludeTransitive>false</excludeTransitive>
+              <stripVersion>false</stripVersion>
+              <includeScope>runtime</includeScope>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <appendAssemblyId>false</appendAssemblyId>
+          <descriptors>
+            <descriptor>src/main/assembly/bin/assembly.xml</descriptor>
+          </descriptors>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
