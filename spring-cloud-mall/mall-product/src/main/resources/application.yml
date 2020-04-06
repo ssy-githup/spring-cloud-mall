@@ -14,7 +14,7 @@ mybatis:
 
 eureka:
   client:
-    register-with-eureka: true #表示是否将自己注册到Eureka Server
+    register-with-eureka: false #表示是否将自己注册到Eureka Server
     service-url:
       defaultZone: http://127.0.0.1:9090/eureka
     registry-fetch-interval-seconds: 180 #此参数会更新路由信息
@@ -43,5 +43,11 @@ spring:
         acknowledge-mode: manual
   activemq:
     broker-url:
+
+
+  redis:
+    host: 101.200.225.183
+    port: 6379
+    timeout: 1000
 
 
