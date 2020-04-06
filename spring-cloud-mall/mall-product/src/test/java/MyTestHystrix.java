@@ -73,4 +73,5 @@ public class MyTestHystrix {
         TimeUnit.SECONDS.sleep(5);
     }
 
+
 }
