@@ -5,9 +5,11 @@ import ai.ssy.entity.AdminUser;
 import ai.ssy.entity.MUser;
 import ai.ssy.mapper.MUserMapper;
 import ai.ssy.service.MUserService;
+import ai.ssy.util.reids.RedisonHelper;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -61,5 +63,40 @@ public class MUserServiceImpl implements MUserService {
         }
         map.put("status","yes");
         return map;
+    }
+
+    /**
+     * 测试redis分布式锁
+     * @param id
+     * @return
+     */
+    public String testRedissonLock(String id){
+        try {
+            RedisonHelper.lock(id,30L);
+
+            savemallSysUser();
+            savemytest1();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            RedisonHelper.unlock(id);
+        }
+        return null;
+    }
+
+    /**
+     *保存一条数据到mall-sys
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void savemallSysUser(){
+        mUserMapper.savemallSysUser();
+    }
+
+    /**
+     *保存一条数据到 mytest1
+     */
+    @Transactional
+    public void savemytest1(){
+        mUserMapper.savemytest1();
     }
 }
