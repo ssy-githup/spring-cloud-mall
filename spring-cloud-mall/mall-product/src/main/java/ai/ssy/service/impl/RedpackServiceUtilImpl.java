@@ -38,6 +38,7 @@ public class RedpackServiceUtilImpl implements RedpackServiceUtil {
          * @param orderId 红包池的ID
          * @param totalAmount 红包的总钱数
          * @param  redPackCount 生成红包的个数
+         *
          */
         redpackService.genRedpack("hbchiID",5,20000);
         return "生成生成环境红包成功orderId = hbchiID";
