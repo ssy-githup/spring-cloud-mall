@@ -43,7 +43,7 @@
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
-      <version>5.1.47</version>
+      <version>8.0.16</version>
     </dependency>
     <!-- gateway连此版本的数据源 ，不要换成druid-spring-boot-starter ，请更新cloud下的pom-->
     <dependency>
