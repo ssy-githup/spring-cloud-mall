@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: path-tongpei #id必须要唯一
+         uri: lb://product-center
+         filters:
+           - StripPrefix=2
+         predicates:
+         #访问http://localhost:8888/**任意请求都会转发到
+         #eg:http://localhost:8888/projects--->http://spring.io/projects
+          - Path=/pc/pp/**
+

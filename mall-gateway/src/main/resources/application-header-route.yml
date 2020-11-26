@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes: #路由
+       - id: header-route #id必须要唯一
+         uri: lb://product-center
+         predicates:
+         #说明请求http://localhost:8888/selectProductInfoById/1 必须带入
+         #header的k=X-Request-appId v=Test才会被转发到
+         #http://product-center/selectProductInfoById/1
+          - Header=X-Request-appId,Test
+          #- Path=/pc/**

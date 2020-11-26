@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+       - id: after-route #id必须要唯一
+         uri: lb://product-center
+         predicates:
+          #关于http://localhost:8888/** 请求时间 > 2010-12-16:15:53:22 下面指定值都会路由到 http://product-center/**
+          #eg.http://localhost:8888/selectProductInfoById/1
+          # http://product-center/selectProductInfoById/1
+          #通过System.out.println(ZonedDateTime.now())
+          - After=2010-12-16T15:53:22.999+08:00[Asia/Shanghai]
