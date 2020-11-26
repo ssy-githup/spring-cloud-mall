@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: admin-monitor-service
+
+
+server:
+  port: 5000
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: false #表示是否将自己注册到Eureka Server
+    service-url:
+      defaultZone: http://127.0.0.1:9090/eureka
+      #defaultZone: http://192.168.15.112:8761/eureka
+
+
